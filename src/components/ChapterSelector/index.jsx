@@ -1,34 +1,41 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-
-const useStyles = makeStyles((theme) => ({
-    formControl: {
-        margin: theme.spacing(1),
-        minWidth: 120,
-    },
-    selectEmpty: {
-        marginTop: theme.spacing(2),
-    },
-}));
+import Menu from '@material-ui/core/Menu';
+import Button from '@material-ui/core/Button';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 export default function ChapterSelector() {
-    const classes = useStyles();
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [activeVersion, setActiveVersion] = React.useState('Chapter');
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
     const handleChange = (e) => {
-        console.log(e.target.value);
-    }
+        console.log("Selection Made:", e);
+        handleClose();
+        setActiveVersion(e);
+    };
+
     return (
         <>
-            {/* Todo: Convert to Button and Menu */}
-            <FormControl className={classes.formControl}>
-                <InputLabel id="chapter-select-label">Chapter</InputLabel>
-                <Select id="chapter-select" labelId="chapter-select-label" onChange={handleChange}>
-                    <MenuItem value={'--'}>--</MenuItem>
-                </Select>
-            </FormControl>
+            <Button className="MuiButton-colorInherit" onClick={handleClick}>{activeVersion} <ArrowDropDownIcon fontSize="small" /></Button>
+            <Menu
+                anchorEl={anchorEl}
+                keepMounted
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+                id="bible-select" >
+                <MenuItem onClick={() => { handleChange('1') }} selected={activeVersion === '1'}>1</MenuItem>
+                <MenuItem onClick={() => { handleChange('2') }} selected={activeVersion === '2'}>2</MenuItem>
+                <MenuItem onClick={() => { handleChange('3') }} selected={activeVersion === '3'}>3</MenuItem>
+                <MenuItem onClick={() => { handleChange('4') }} selected={activeVersion === '4'}>4</MenuItem>
+            </Menu>
         </>
     )
 }

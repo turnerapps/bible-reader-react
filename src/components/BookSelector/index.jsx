@@ -1,35 +1,44 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import Menu from '@material-ui/core/Menu';
+import Button from '@material-ui/core/Button';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ChapterSelector from '../ChapterSelector';
 
-const useStyles = makeStyles((theme) => ({
-    formControl: {
-        margin: theme.spacing(1),
-        minWidth: 120,
-    },
-    selectEmpty: {
-        marginTop: theme.spacing(2),
-    },
-}));
-
 export default function BookSelector() {
-    const classes = useStyles();
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [activeVersion, setActiveVersion] = React.useState('Book');
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
     const handleChange = (e) => {
-        console.log(e.target.value);
+        console.log("Selection Made:",e);
+        handleClose();
+        setActiveVersion(e);
     }
     return (
         <>
+            <Button className="MuiButton-colorInherit" onClick={handleClick}>{activeVersion} <ArrowDropDownIcon fontSize="small" /></Button>
+            <Menu
+                anchorEl={anchorEl}
+                keepMounted
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+                id="bible-select" >
+                <MenuItem onClick={() => { handleChange('Genesis')}} selected={activeVersion==='Genesis'}>Genesis</MenuItem>
+                <MenuItem onClick={() => {handleChange('Exodus')}} selected={activeVersion==='Exodus'}>Exodus</MenuItem>
+                <MenuItem onClick={() => {handleChange('Leviticus')}} selected={activeVersion==='Leviticus'}>Leviticus</MenuItem>
+                <MenuItem onClick={() => {handleChange('Numbers')}} selected={activeVersion==='Numbers'}>Numbers</MenuItem>
+            </Menu>
+
+
             {/* Todo: Convert to Button and Menu */}
-            <FormControl className={classes.formControl}>
-                <InputLabel id="book-select-label">Book</InputLabel>
-                <Select id="book-select" labelId="book-select-label" onChange={handleChange}>
-                    <MenuItem value={'--'}>--</MenuItem>
-                </Select>
-            </FormControl>
+
             <ChapterSelector />
         </>
     )
