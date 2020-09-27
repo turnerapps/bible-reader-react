@@ -4,10 +4,9 @@ import Menu from '@material-ui/core/Menu';
 import Button from '@material-ui/core/Button';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
-export default function ChapterSelector() {
+export function ChapterSelector({chapters, activeChapter, onSelectChapter}) {
 
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const [activeVersion, setActiveVersion] = React.useState('Chapter');
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -16,26 +15,18 @@ export default function ChapterSelector() {
     const handleClose = () => {
         setAnchorEl(null);
     };
-    const handleChange = (e) => {
-        console.log("Selection Made:", e);
-        handleClose();
-        setActiveVersion(e);
-    };
 
-    return (
+    return chapters ? (
         <>
-            <Button className="MuiButton-colorInherit" onClick={handleClick}>{activeVersion} <ArrowDropDownIcon fontSize="small" /></Button>
+            <Button className="MuiButton-colorInherit" onClick={handleClick}>{activeChapter ? activeChapter.number : "Chapter"} <ArrowDropDownIcon fontSize="small" /></Button>
             <Menu
                 anchorEl={anchorEl}
                 keepMounted
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
                 id="bible-select" >
-                <MenuItem onClick={() => { handleChange('1') }} selected={activeVersion === '1'}>1</MenuItem>
-                <MenuItem onClick={() => { handleChange('2') }} selected={activeVersion === '2'}>2</MenuItem>
-                <MenuItem onClick={() => { handleChange('3') }} selected={activeVersion === '3'}>3</MenuItem>
-                <MenuItem onClick={() => { handleChange('4') }} selected={activeVersion === '4'}>4</MenuItem>
+                    {chapters.map(c=>(<MenuItem key={c.number} onClick={() => { handleClose(); onSelectChapter(c.id) }} selected={activeChapter && activeChapter.number === c.number}>{c.number}</MenuItem>))};
             </Menu>
         </>
-    )
+    ) : (<></>);
 }

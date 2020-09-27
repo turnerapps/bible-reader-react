@@ -20,7 +20,7 @@ export async function fetchBooks(bibleId, setBooks) {
     let data;
     let books = [];
     try {
-        const response = await fetch(`https://api.scripture.api.bible/v1/bibles/${versionId}/books?include-chapters-and-sections=true`, {
+        const response = await fetch(`https://api.scripture.api.bible/v1/bibles/${bibleId}/books?include-chapters-and-sections=true`, {
             method: 'GET',
             headers: { 'api-key': secrets.apikey }
         });
@@ -33,7 +33,7 @@ export async function fetchBooks(bibleId, setBooks) {
                 name: b.name,
                 chapters
             });
-        })
+        });
     } catch (ex) {
         console.log('Error fetching Books!', ex);
     } finally {
@@ -49,5 +49,5 @@ export async function fetchChapter(bibleId, chapterId, setChapter) {
         headers: { 'api-key': secrets.apikey }
     });
     const data = await response.json();
-    setChapter({ content: data.data.content, copyright: data.data.copyright });
+    setChapter({ number: data.data.number, content: data.data.content, copyright: data.data.copyright });
 }
