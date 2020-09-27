@@ -26,8 +26,3 @@ or
     `yarn start`
 
 Your browser should automatically launch the reader.
-
-Screenshots and demo to follow!
-
-#Todo:
-The basic design is completed, but the API calls and the state management need to be hooked in as of 9/25/20. With ~1-2 hours per day max to work on this, it may be 9/28 before it's complete.
