@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/bible-reader-react/precache-manifest.5538e9655b14bb8048a02ede8b665e16.js"
+  "/bible-reader-react/precache-manifest.695f0bcced6efe209d78d056dc42d9ba.js"
 );
 
 self.addEventListener('message', (event) => {

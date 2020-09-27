@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/bible-reader-react/static/css/main.ccf817b1.chunk.css",
-    "main.js": "/bible-reader-react/static/js/main.a41b6c66.chunk.js",
-    "main.js.map": "/bible-reader-react/static/js/main.a41b6c66.chunk.js.map",
+    "main.js": "/bible-reader-react/static/js/main.ce45c23c.chunk.js",
+    "main.js.map": "/bible-reader-react/static/js/main.ce45c23c.chunk.js.map",
     "runtime-main.js": "/bible-reader-react/static/js/runtime-main.b112b966.js",
     "runtime-main.js.map": "/bible-reader-react/static/js/runtime-main.b112b966.js.map",
     "static/js/2.3e389ba8.chunk.js": "/bible-reader-react/static/js/2.3e389ba8.chunk.js",
     "static/js/2.3e389ba8.chunk.js.map": "/bible-reader-react/static/js/2.3e389ba8.chunk.js.map",
     "index.html": "/bible-reader-react/index.html",
-    "precache-manifest.5538e9655b14bb8048a02ede8b665e16.js": "/bible-reader-react/precache-manifest.5538e9655b14bb8048a02ede8b665e16.js",
+    "precache-manifest.695f0bcced6efe209d78d056dc42d9ba.js": "/bible-reader-react/precache-manifest.695f0bcced6efe209d78d056dc42d9ba.js",
     "service-worker.js": "/bible-reader-react/service-worker.js",
     "static/css/main.ccf817b1.chunk.css.map": "/bible-reader-react/static/css/main.ccf817b1.chunk.css.map",
     "static/js/2.3e389ba8.chunk.js.LICENSE.txt": "/bible-reader-react/static/js/2.3e389ba8.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b112b966.js",
     "static/js/2.3e389ba8.chunk.js",
     "static/css/main.ccf817b1.chunk.css",
-    "static/js/main.a41b6c66.chunk.js"
+    "static/js/main.ce45c23c.chunk.js"
   ]
 }

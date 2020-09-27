@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "29407c34b874eb177f597caf03df21d1",
+    "revision": "c36fb1bf9dfc7e0a0471fba3e7582137",
     "url": "/bible-reader-react/index.html"
   },
   {
-    "revision": "6ce63b649279212f00e3",
+    "revision": "afbea0ad18a3e7afb392",
     "url": "/bible-reader-react/static/css/main.ccf817b1.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bible-reader-react/static/js/2.3e389ba8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6ce63b649279212f00e3",
-    "url": "/bible-reader-react/static/js/main.a41b6c66.chunk.js"
+    "revision": "afbea0ad18a3e7afb392",
+    "url": "/bible-reader-react/static/js/main.ce45c23c.chunk.js"
   },
   {
     "revision": "1a5a05e65a2ff8111b21",
