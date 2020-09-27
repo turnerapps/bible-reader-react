@@ -1,6 +1,8 @@
 # Bible Reader
 A simple React app that allows a user to select version, book, chapter and have the passage displayed. It also offers the ability to display a random scripture.
 
+## [Demo](https://turnerapps.github.io/bible-reader-react/)
+
 ## Motivation
 There are so many ways to read the bible. Why create yet another facade? Simply put, to showcase my ability to create an app in the small amount of time I have available.
 
