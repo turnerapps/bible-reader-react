@@ -25,7 +25,7 @@ export function ChapterSelector({chapters, activeChapter, onSelectChapter}) {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
                 id="bible-select" >
-                    {chapters.map(c=>(<MenuItem key={c.number} onClick={() => { handleClose(); onSelectChapter(c.id) }} selected={activeChapter && activeChapter.number === c.number}>{c.number}</MenuItem>))};
+                    {chapters.map(c=>(<MenuItem key={c.number} onClick={() => { handleClose(); onSelectChapter(c.id) }} selected={activeChapter && activeChapter.number === c.number}>{c.number}</MenuItem>))}
             </Menu>
         </>
     ) : (<></>);
