@@ -49,5 +49,6 @@ export async function fetchChapter(bibleId, chapterId, setChapter) {
         headers: { 'api-key': secrets.apikey }
     });
     const data = await response.json();
+    console.log('Chapter Content', data.data.content);
     setChapter({ number: data.data.number, content: data.data.content, copyright: data.data.copyright });
 }
